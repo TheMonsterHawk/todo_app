@@ -1,0 +1,19 @@
+version: '3' 
+
+services: 
+  web: 
+    build: ./backend/ 
+    command: python manage.py runserver localhost:8000 
+    ports: 
+      - 8000:8000 
+  app:
+    container_name: app-dev
+    image: app-dev
+    build:
+      context: ./frontend/
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3000:3000
+  
