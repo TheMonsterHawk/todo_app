@@ -1,0 +1,1 @@
+backend (django app) deployment with docker complete. 
