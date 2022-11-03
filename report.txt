@@ -1,1 +1,3 @@
 backend (django app) deployment with docker complete. 
+just go to backend dir run docker-compose up --build and see the magic happen 
+

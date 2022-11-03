@@ -1,24 +1,34 @@
-FROM mhart/alpine-node:5.6.0 AS development
-ENV NODE_ENV development
-# Add a work directory
-WORKDIR /app
-EXPOSE 3000  
+# FROM mhart/alpine-node:5.6.0 AS development
+# ENV NODE_ENV development
+# # Add a work directory
+# WORKDIR /app
+# EXPOSE 3000  
 
-CMD ['npm', 'start'] 
+# CMD ['npm', 'start'] 
 
-COPY package.json /src 
+# COPY package.json /src 
 
-COPY package.json .
-RUN npm install 
+# COPY package.json .
+# RUN npm install 
+# COPY . .
+
+# # Cache and Install dependencies
+
+# # COPY yarn.lock .
+# # RUN yarn install
+
+
+# # Copy app files
+
+# # Expose port
+# # Start the app
+
+FROM node:10 
+
+WORKDIR /app 
+
 COPY . .
 
-# Cache and Install dependencies
+EXPOSE 3000 
 
-# COPY yarn.lock .
-# RUN yarn install
-
-
-# Copy app files
-
-# Expose port
-# Start the app
+CMD ['yarn', 'start', ] 
